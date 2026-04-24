@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue + ";path=/";
+}
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookies = decodedCookie.split(";");
+
+    for (let i = 0; i < cookies.length; i++) {
+        let c = cookies[i].trim();
+
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length);
+        }
+    }
+
+    return "";
+}
+
+function updateCookie() {
+    const value = Math.floor(Math.random() * 11)
+    setCookie("username", value)
+    console.log("New value:", value);
+}
+console.log(document.cookie)
+setInterval(updateCookie, 1000)
+
+
+</script>
+</body>
+</html>

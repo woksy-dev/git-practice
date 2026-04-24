@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <body>
+    <p id="para1">Paragraph 1</p>
+    <p id="para2">Paragraph 2</p>
+    <p id="para3">Paragraph 3</p>
+    <script>
+
+
+setInterval(() => {
+    const size = Math.random() > 0.5 ? "32px" : "16px";
+    document.getElementById("para1").style.fontSize = size;
+}, 5000);
+
+
+setInterval(() => {
+    document.getElementById("para2").textContent = "Date: " + new Date();
+}, 10000);
+
+
+setInterval(() => {
+    const colors = ["yellow", "magenta", "cyan"];
+    const randomColor = colors[Math.floor(Math.random() * 3)];
+    document.getElementById("para3").style.backgroundColor = randomColor;
+}, 3000);
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>JS Browser Object Model</h1>
+    <button onclick="newWindow()">New Window</button>
+    <button onclick="newSize()">Resize</button>
+    <button onclick="alert()">Alert</button>
+    <button onclick="back()">Go back</button>
+    <button onclick="forward()">Go next</button>
+
+    <script>
+      let myWindow;
+
+      function newWindow() {
+        myWindow = window.open("", "", "width = 800, height = 800");
+      }
+      function newSize() {
+        myWindow.resizeTo(myWindow.innerWidth/2, myWindow.innerHeight/2);
+      }
+      function alert() {
+        myWindow.alert(window.location.href);
+      }
+
+      function back() {
+        myWindow.history.back();
+      }
+      function forward() {
+        myWindow.history.forward();
+      }
+    </script>
+  </body>
+</html>
